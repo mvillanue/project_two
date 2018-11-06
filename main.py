@@ -1,7 +1,7 @@
 from utilities import *
 from pptree import *
 
-training_set =  readFile("expanded")
+training_set =  readFile("mushroom")
 print readFile
 #print headers()
 
