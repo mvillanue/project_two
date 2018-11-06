@@ -13,7 +13,7 @@ def readFile(filename):
 print readFile("expanded")
 
 
-"""from pptree import *
+from pptree import *
 
 shame = Node("shame")
 
@@ -28,4 +28,4 @@ discomfiture = Node("discomfiture", embarrassment)
 abashment = Node("abashment", embarrassment)
 confusion = Node("confusion", embarrassment)
   
-print_tree(shame)"""
+print_tree(shame)
