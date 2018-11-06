@@ -1,7 +1,8 @@
 from utilities import *
 from pptree import *
 
-print readFile("expanded")
+training_set =  readFile("expanded")
+print readFile
 #print headers()
 
 
