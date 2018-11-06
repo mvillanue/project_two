@@ -5,6 +5,10 @@ def readFile(filename):
     data = list()
     with open(filename) as f:
         for line in f:
-            data.append(line.rstrip())
+            data.append(line.rstrip().split(','))
     
     return data
+
+
+def unique_vals(rows, col):
+    return set([row[col] for row in rows])
