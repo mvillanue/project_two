@@ -15,7 +15,7 @@ print readFile("expanded")
 
 from pptree import *
 
-shame = Node("shame")
+"""shame = Node("shame")
 
 conscience = Node("conscience", shame)
 selfdisgust = Node("selfdisgust", shame)
@@ -28,4 +28,4 @@ discomfiture = Node("discomfiture", embarrassment)
 abashment = Node("abashment", embarrassment)
 confusion = Node("confusion", embarrassment)
   
-print_tree(shame)
+print_tree(shame)"""
