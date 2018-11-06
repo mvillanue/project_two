@@ -5,11 +5,17 @@ class Question:
         self.value = value
 
     def match(self, example):
-        return val == self.value
+
+        val = example[self.column]
+        if is_numeric(val):
+            return val >= self.value
+        else:
+            return val == self.value
 
     def __repr__(self):
 
         condition = "=="
-
+        if is_numeric(self.value):
+            condition = ">="
         return "Is %s %s %s?" % (
             header[self.column], condition, str(self.value))
