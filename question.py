@@ -4,9 +4,9 @@ class Question:
         self.column = column
         self.value = value
 
-    def match(self, example):
+    def match(self, data):
 
-        val = example[self.column]
+        val = data[self.column]
         if is_numeric(val):
             return val >= self.value
         else:
