@@ -2,7 +2,8 @@
 # For Python 2 / 3 compatability
 from __future__ import print_function
 from utilities import *
-
+from graphviz import Digraph
+import uuid 
 training_data =  readFile("mushroom")
 # Toy dataset.
 # Format: each row is an example.
@@ -65,12 +66,6 @@ def is_numeric(value):
 
 
 class Question:
-    """A Question is used to partition a dataset.
-    This class just records a 'column number' (e.g., 0 for Color) and a
-    'column value' (e.g., Green). The 'match' method is used to compare
-    the feature value in an example to the feature value stored in the
-    question. See the demo below.
-    """
 
     def __init__(self, column, value):
         self.column = column
@@ -266,6 +261,8 @@ class Leaf:
 
     def __init__(self, rows):
         self.predictions = class_counts(rows)
+        self.id = uuid.uuid1()
+        self.tag = str(self.predictions)
 
 
 class Decision_Node:
@@ -278,6 +275,8 @@ class Decision_Node:
         self.true_branch = true_branch
         self.false_branch = false_branch
         self.gain = gain
+        self.tag = "question: " + self.question.__repr__() + "\n gain: " + str(self.gain)
+        self.id = uuid.uuid1()
 
 
 def build_tree(rows):
@@ -345,7 +344,21 @@ def classify(row, node):
     else:
         return classify(row, node.false_branch)
 
-
+def printNode(node, dot, edges=list()):
+    if node is None:
+        return
+    
+    if not isinstance(node,Leaf):
+        if node.true_branch is not None and not isinstance(node.true_branch,Leaf):
+            dot.node(node.true_branch.tag, node.true_branch.tag)
+            edges.append([node.tag,node.true_branch.tag])
+            #dot.edge(node.id, node.true_branch.id)
+            printNode(node.true_branch,dot)
+        if node.false_branch is not None and  not isinstance(node.false_branch,Leaf):
+            dot.node(node.false_branch.tag, node.false_branch.tag)
+            edges.append([node.tag,node.false_branch.tag])
+            #dot.edge(node.tag,node.false_branch.tag)
+            printNode(node.false_branch,dot)
 #######
 # Demo:
 # The tree predicts the 1st row of our
@@ -366,7 +379,21 @@ def print_leaf(counts):
 
 my_tree = build_tree(training_data)
 
-print (my_tree.true_branch.gain, my_tree.question)
+#print (my_tree.true_branch.gain, my_tree.question)
+
+
+
+dot = Digraph(comment='The Round Table')
+dot.node(my_tree.tag,my_tree.tag)
+
+edges = list()
+printNode (my_tree,dot,edges)
+print (edges)
+for e in edges:
+    dot.edge(str(e[0]), str(e[1]), label="sublcass")
+dot.render('test-output/round-table.gv', view=True)
+
+
 #my_tree = build_tree(training_data)
 #print my_tree
 #print_tree(my_tree)

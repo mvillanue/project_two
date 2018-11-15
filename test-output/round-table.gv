@@ -1,0 +1,66 @@
+// The Round Table
+digraph {
+	"question: Is stalk-surface-above-ring == EQUAL?
+ gain: 0.0957583555556" [label="question: Is stalk-surface-above-ring == EQUAL?
+ gain: 0.0957583555556"]
+	"question: Is spore-print-color == PENDANT?
+ gain: 0.154186538178" [label="question: Is spore-print-color == PENDANT?
+ gain: 0.154186538178"]
+	"question: Is gil-attachment == PUNGENT?
+ gain: 0.099173553719" [label="question: Is gil-attachment == PUNGENT?
+ gain: 0.099173553719"]
+	"question: Is stalk-root == TAPERING?
+ gain: 0.0653251549587" [label="question: Is stalk-root == TAPERING?
+ gain: 0.0653251549587"]
+	"question: Is cap-shape == EDIBLE?
+ gain: 0.170491071429" [label="question: Is cap-shape == EDIBLE?
+ gain: 0.170491071429"]
+	"question: Is population == WHITE?
+ gain: 0.102040816327" [label="question: Is population == WHITE?
+ gain: 0.102040816327"]
+	"question: Is ring-number == WHITE?
+ gain: 0.0701589583333" [label="question: Is ring-number == WHITE?
+ gain: 0.0701589583333"]
+	"question: Is gill-color == BROAD?
+ gain: 0.065911847905" [label="question: Is gill-color == BROAD?
+ gain: 0.065911847905"]
+	"question: Is spore-print-color == EVANESCENT?
+ gain: 0.088140091934" [label="question: Is spore-print-color == EVANESCENT?
+ gain: 0.088140091934"]
+	"question: Is veil-type == WHITE?
+ gain: 0.082031859177" [label="question: Is veil-type == WHITE?
+ gain: 0.082031859177"]
+	"question: Is stalk-surface-above-ring == ??
+ gain: 0.0825049098761" [label="question: Is stalk-surface-above-ring == ??
+ gain: 0.0825049098761"]
+	"question: Is stalk-surface-above-ring == CLUB?
+ gain: 0.0773215132592" [label="question: Is stalk-surface-above-ring == CLUB?
+ gain: 0.0773215132592"]
+	"question: Is population == GREEN?
+ gain: 0.107064593551" [label="question: Is population == GREEN?
+ gain: 0.107064593551"]
+	"question: Is ring-type == ONE?
+ gain: 0.0612244897959" [label="question: Is ring-type == ONE?
+ gain: 0.0612244897959"]
+	"question: Is habitat == CLUSTERED?
+ gain: 0.0225613975863" [label="question: Is habitat == CLUSTERED?
+ gain: 0.0225613975863"]
+	"question: Is population == CHOCOLATE?
+ gain: 0.00200773349197" [label="question: Is population == CHOCOLATE?
+ gain: 0.00200773349197"]
+	"question: Is veil-type == BROWN?
+ gain: 0.232782369146" [label="question: Is veil-type == BROWN?
+ gain: 0.232782369146"]
+	"question: Is stalk-color-above-ring == SCALY?
+ gain: 0.297520661157" [label="question: Is stalk-color-above-ring == SCALY?
+ gain: 0.297520661157"]
+	"question: Is habitat == CLUSTERED?
+ gain: 0.058769513315" [label="question: Is habitat == CLUSTERED?
+ gain: 0.058769513315"]
+	question:" Is stalk-surface-above-ring == EQUAL?
+ gain": 0.0957583555556 -> question:" Is spore-print-color == PENDANT?
+ gain": 0.154186538178 [label=sublcass]
+	question:" Is stalk-surface-above-ring == EQUAL?
+ gain": 0.0957583555556 -> question:" Is stalk-root == TAPERING?
+ gain": 0.0653251549587 [label=sublcass]
+}
